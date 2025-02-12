@@ -1,0 +1,63 @@
+<h1>API Documentation</h1>
+<p>Welcome to the Zodiac API documentation! Here you can find details about available endpoints.</p>
+
+<h2>Endpoints</h2>
+
+<h3>Get the Zodiac Sign for the Current Date</h3>
+<pre>
+GET /api/v1/current_date_zodiac_sign
+</pre>
+<p>This method returns the zodiac sign corresponding to the current date.</p>
+<p><strong>Example Response:</strong></p>
+<pre>
+{
+  "id": 1,
+  "name": "Aries",
+  "start_date": "2023-03-21",
+  "end_date": "2023-04-19"
+}
+</pre>
+<p><strong>Errors:</strong></p>
+<pre>
+404: Zodiac sign not found for the current date.
+</pre>
+
+<h3>Get the Zodiac Sign for a Specific Date</h3>
+<pre>
+GET /api/v1/zodiac_sign_by_date?date=YYYY-MM-DD
+</pre>
+<p>Use this endpoint to get the zodiac sign for a user-specified date.</p>
+<p><strong>Example Response:</strong></p>
+<pre>
+{
+  "id": 1,
+  "name": "Taurus",
+  "start_date": "2023-04-20",
+  "end_date": "2023-05-20"
+}
+</pre>
+<p><strong>Errors:</strong></p>
+<pre>
+400: Invalid date format. Please use the YYYY-MM-DD format.
+404: Zodiac sign not found for the specified date.
+</pre>
+
+<h3>Get the Date Range for a Zodiac Sign</h3>
+<pre>
+GET /api/v1/date_range_by_sign?sign=ZodiacSign
+</pre>
+<p>This method returns the date range for the provided zodiac sign.</p>
+<p><strong>Example Response:</strong></p>
+<pre>
+{
+  "name": "Pisces",
+  "start_date": "2023-02-19",
+  "end_date": "2023-03-20"
+}
+</pre>
+<p><strong>Errors:</strong></p>
+<pre>
+400: The sign parameter is required.
+404: Zodiac sign not found.
+</pre>
+

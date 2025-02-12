@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+
+/* Фиксируем футер внизу страницы */
+html, body {
+  height: 100%; /* Обеспечиваем, что body и html будут занимать 100% высоты */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Основной контейнер */
+main {
+  flex: 1; /* Это делает основной блок растягивающимся на оставшееся место */
+}
+
+/* Стили для шапки */
+header {
+  display: flex;
+  justify-content: center; /* Центрируем все содержимое в шапке */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+}
+
+.logo {
+  flex: 1; /* Заставляем логотип занимать оставшееся пространство, если нужно */
+  display: flex;
+  justify-content: center; /* Центрируем логотип внутри контейнера */
+}
+
+.logo img {
+  height: 120px; /* Увеличиваем высоту логотипа */
+  width: auto; /* Сохраняем пропорции */
+  max-width: 100%; /* Ограничиваем максимальную ширину */
+  object-fit: contain; /* Логотип не будет искажаться */
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Стили футера */
+footer {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+/* Стили для навигации */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}

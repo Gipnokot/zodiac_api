@@ -1,9 +1,12 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Zodiac.create(name: 'Aries', start_date: '2025-03-21', end_date: '2025-04-19')
+Zodiac.create(name: 'Taurus', start_date: '2025-04-20', end_date: '2025-05-20')
+Zodiac.create(name: 'Gemini', start_date: '2025-05-21', end_date: '2025-06-20')
+Zodiac.create(name: 'Cancer', start_date: '2025-06-21', end_date: '2025-07-22')
+Zodiac.create(name: 'Leo', start_date: '2025-07-23', end_date: '2025-08-22')
+Zodiac.create(name: 'Virgo', start_date: '2025-08-23', end_date: '2025-09-22')
+Zodiac.create(name: 'Libra', start_date: '2025-09-23', end_date: '2025-10-22')
+Zodiac.create(name: 'Scorpio', start_date: '2025-10-23', end_date: '2025-11-21')
+Zodiac.create(name: 'Sagittarius', start_date: '2025-11-22', end_date: '2025-12-21')
+Zodiac.create(name: 'Capricorn', start_date: '2025-12-22', end_date: '2025-01-19')
+Zodiac.create(name: 'Aquarius', start_date: '2025-01-20', end_date: '2025-02-18')
+Zodiac.create(name: 'Pisces', start_date: '2025-02-19', end_date: '2025-03-20')

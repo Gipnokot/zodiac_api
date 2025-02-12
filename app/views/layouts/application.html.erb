@@ -1,23 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= content_for(:title) || "Zodiac Api" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the Zodiac API to find zodiac signs and their date ranges. Access API documentation and more.">
+  <meta name="author" content="Your Name or Company">
+  <meta name="robots" content="index, follow">
 
-    <%= yield :head %>
+  <title><%= content_for?(:title) ? yield(:title) : "Zodiac API" %></title>
 
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
+  <!-- Link to favicon -->
+  <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
+
+  <!-- Stylesheets -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <!-- JavaScripts -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <!-- Header with logo and navigation -->
+  <header>
+    <!-- Logo -->
+    <div class="logo">
+      <%= image_tag('logo.png', alt: 'Zodiac API Logo', class: 'logo') %>
+    </div>
+  </header>
+
+  <!-- Main content area -->
+  <main>
     <%= yield %>
-  </body>
+  </main>
+
+  <!-- Footer with year and copyright -->
+  <footer>
+    <p>&copy; <%= Date.current.year %> Zodiac API. All rights reserved.</p>
+    <p>Created by <a href="https://github.com/Gipnokot" target="_blank" rel="noopener noreferrer">Gipnokot</a></p>
+  </footer>
+
+</body>
 </html>
