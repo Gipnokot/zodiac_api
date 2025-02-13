@@ -13,5 +13,11 @@ test:
   database: <%= ENV['DATABASE_PATH'] || 'db/test.sqlite3' %>
 
 production:
-  <<: *default
-  database: <%= ENV['DATABASE_PATH'] || 'db/production.sqlite3' %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  database: <%= ENV['DATABASE_URL'] || 'zodiac_api_database' %>
+  username: <%= ENV['DATABASE_USERNAME'] || 'your_database_username' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'your_database_password' %>
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>

@@ -23,20 +23,15 @@
 </head>
 <body>
   <!-- Header with logo and navigation -->
-  <header>
-    <!-- Logo -->
-    <div class="logo">
-      <%= image_tag('logo.png', alt: 'Zodiac API Logo', class: 'logo') %>
-    </div>
   </header>
 
   <!-- Main content area -->
-  <main>
+  <main style="max-width: 900px; margin: 0 auto; padding: 20px;">
     <%= yield %>
   </main>
 
   <!-- Footer with year and copyright -->
-  <footer>
+  <footer style="text-align: center; padding: 20px; background-color: #f1f1f1; position: relative;">
     <p>&copy; <%= Date.current.year %> Zodiac API. All rights reserved.</p>
     <p>Created by <a href="https://github.com/Gipnokot" target="_blank" rel="noopener noreferrer">Gipnokot</a></p>
   </footer>
