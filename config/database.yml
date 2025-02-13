@@ -15,9 +15,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  timeout: 5000
-  database: <%= ENV['DATABASE_URL'] || 'zodiac_api_database' %>
-  username: <%= ENV['DATABASE_USERNAME'] || 'your_database_username' %>
-  password: <%= ENV['DATABASE_PASSWORD'] || 'your_database_password' %>
-  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: sample_app_production
+  username: sample_app
+  password: <%= ENV['SAMPLE_APP_DATABASE_PASSWORD'] %>
